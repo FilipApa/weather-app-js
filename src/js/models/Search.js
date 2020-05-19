@@ -8,18 +8,19 @@ export default class Search {
   async getResults() {
     try {
       const weatherRes = await axios(
-        `https://api.openweathermap.org/data/2.5/forecast?q=${this.query}&appid=${weatherKey}`
+        `https://api.openweathermap.org/data/2.5/forecast?q=${this.query}&units=metric&appid=${weatherKey}`
       );
       this.weather = weatherRes.data;
-      console.log(this.weather);
-
+      const currentWeatherRes = await axios(
+        `https://api.openweathermap.org/data/2.5/weather?q=${this.query}&units=metric&appid=${weatherKey}`
+      );
+      this.currentWeather = currentWeatherRes.data;
       const photoRes = await axios(
         `${proxy}https://api.unsplash.com/search/photos?page=1&query=${this.query}&client_id=${unsplashKey}`
       );
       this.photo = photoRes.data.results[0].urls.regular;
-      console.log(this.photo);
     } catch (error) {
-      console.log(err);
+      console.log(error);
     }
   }
 }
