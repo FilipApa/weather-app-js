@@ -12,7 +12,7 @@ export function clearResluts() {
   const weatherContainer = document.querySelector(".weather-container");
   if (typeof weatherContainer != "undefined" && weatherContainer != null) {
     console.log("proslo");
-    main.removeChild(weatherContainer);
+    elements.main.removeChild(weatherContainer);
   }
 }
 

@@ -2,6 +2,8 @@ export const elements = {
   main: document.getElementById("main"),
   formSearch: document.getElementById("form"),
   inputSearch: document.getElementById("search"),
+  aside: document.getElementById("aside"),
+  weatherDetails: document.getElementById("weather-details"),
 };
 
 const dates = {

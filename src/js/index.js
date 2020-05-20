@@ -2,6 +2,7 @@ import "./css/style.css";
 
 import Search from "./models/Search";
 import * as mainView from "./views/mainView";
+import * as asideView from "./views/asideView";
 
 const state = {};
 
@@ -14,10 +15,12 @@ const controlSearch = async () => {
 
       mainView.clearInput();
       mainView.clearResluts();
+      asideView.clearResluts();
 
       await state.search.getResults();
       mainView.renderMainInfo(state.search.currentWeather);
       mainView.renderMainImg(state.search.photo);
+      asideView.renderWeatherDetails(state.search.currentWeather);
     } catch (error) {
       console.log(error);
     }
