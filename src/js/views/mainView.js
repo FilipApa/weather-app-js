@@ -27,7 +27,7 @@ export function renderMainInfo(data) {
   const markup = `
     <div class="weather-container">
       <div class="weather-container__temp-box">
-          <p class="weather-container__temp">${temperature.toString()}</p>
+          <p class="weather-container__temp temp">${temperature.toString()}</p>
       </div>
       <div class="weather-container__info-box">
         <p class="weather-container__town">
