@@ -48,7 +48,7 @@ const renderHourly = (weather) => {
   const markup = `
       <li>
         <span class="aside__number">${hour}</span>
-        <span class="aside__temperature temp"">${Math.floor(
+        <span class="aside__temperature temp">${Math.floor(
           weather.main.temp
         )}</span>
         <div class="aside__rain">
@@ -77,11 +77,11 @@ const renderDaily = (weather) => {
 
   const markup = `
     <li>
-      <span class="aside__number"">${dateFormat}</span>
+      <span class="aside__number">${dateFormat}</span>
       <img class="aside__daily-icon" src="http://openweathermap.org/img/w/${
         weather.weather[0].icon
       }.png" alt="${weather.weather[0].description}">
-      <span class="aside__temperature temp"">${Math.floor(
+      <span class="aside__temperature temp">${Math.floor(
         weather.main.temp
       )}</span>
       <div class="aside__rain">
