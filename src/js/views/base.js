@@ -1,4 +1,5 @@
 export const elements = {
+  container: document.querySelector(".container"),
   main: document.getElementById("main"),
   formSearch: document.getElementById("form"),
   inputSearch: document.getElementById("search"),
@@ -67,4 +68,22 @@ export const formatHours = (hour) => {
     }
   });
   return hour;
+};
+
+export const renderLoader = (parent) => {
+  const markup = `
+    <div class="loader-background">
+      <i class="fas fa-cloud-sun"></i>
+    </div>
+  `;
+
+  parent.insertAdjacentHTML("beforeend", markup);
+};
+
+export const removeLoader = () => {
+  const loader = document.querySelector(".loader-background");
+
+  if (loader) {
+    loader.parentElement.removeChild(loader);
+  }
 };

@@ -3,8 +3,7 @@ import { elements, formatHours } from "./base";
 export const clearResluts = () => {
   elements.weatherDetails.innerHTML = "";
   elements.weatherHourly.innerHTML = "";
-  elements.box.forEach((elem) => (elem.style.display = "none"));
-  elements.ulElements.forEach((elem) => (elem.style.display = "none"));
+  elements.weatherDaily.innerHTML = "";
 };
 
 export const renderWeatherDetails = (data) => {
