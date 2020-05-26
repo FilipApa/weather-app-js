@@ -344,10 +344,19 @@ main::after {
     height: 100vh;
   }
 
-  .aside__temperature {
+  .weather-container {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+
+  .weather-container__temp {
     font-size: 70px;
   }
 
+  .aside__temperature {
+    font-size: 70px;
+  }
+  
   .aside__temperature::after {
     width: 10px;
     height: 10px;
