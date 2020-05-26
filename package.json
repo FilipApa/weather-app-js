@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/FilipApa/weather-app-js/issues"
   },
-  "homepage": "https://github.com/FilipApa/weather-app-js",
+  "homepage": "https://github.com/FilipApa/weather-app-js/dist",
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.6",
