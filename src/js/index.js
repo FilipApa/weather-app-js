@@ -1,13 +1,16 @@
-import "./css/style.css";
+import "../css/style.css";
 import Search from "./models/Search";
 import { elements, renderLoader, removeLoader } from "./views/base";
+import noviSad from "../assets/novi_sad@vojvodina.sky.view.jpg";
+import beograd from "../assets/beograd@bg_ulice.jpg";
+import nis from "../assets/nis@thecityofnis.jpg"
 import * as mainView from "./views/mainView";
 import * as asideView from "./views/asideView";
 
 const state = {};
 
 const controlSearch = async () => {
-  const query = mainView.getInput();
+  let query = mainView.getInput() || "Novi Sad";
 
   if (query) {
     state.search = new Search(query);
@@ -20,8 +23,16 @@ const controlSearch = async () => {
       await state.search.getResults();
       removeLoader();
       mainView.renderMainInfo(state.search.currentWeather);
-      mainView.renderMainImg(state.search.photo);
-
+      if(query.toLowerCase() === "novi sad") {
+        mainView.renderMainImg(noviSad);
+      }else if(query.toLowerCase() === "beograd") {
+        mainView.renderMainImg(beograd); 
+      }else if(query.toLowerCase() === "niš") {
+        mainView.renderMainImg(nis)
+      }else {
+        mainView.renderMainImg(state.search.photo);
+      }
+    
       asideView.renderWeatherDetails(state.search.currentWeather);
       asideView.renderWeatherHourly(state.search.weather);
       asideView.renderWeatherDaily(state.search.weather);
@@ -36,6 +47,7 @@ elements.formSearch.addEventListener("submit", (e) => {
   controlSearch();
 });
 
-document.addEventListener("load", () => {
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("radi")
   controlSearch();
 });
